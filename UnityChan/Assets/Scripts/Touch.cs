@@ -40,7 +40,7 @@ public class Touch : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 100))
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.red, 2, false);
                 Debug.Log("Hit");
@@ -56,6 +56,7 @@ public class Touch : MonoBehaviour
                     animator.SetBool("Face_Angry", false);
                     univoice.clip = voice1;
                     univoice.Play();
+                    MsgDisp.ShowMessage("안녕 \n 오늘도 힘차게 시작해보자!");
                 }
                 else if (hitObj.tag == "Body")
                 {
@@ -64,6 +65,7 @@ public class Touch : MonoBehaviour
                     animator.SetBool("Face_Angry", true);
                     univoice.clip = voice2;
                     univoice.Play();
+                    MsgDisp.ShowMessage("꺆");
                 }
             }
             
