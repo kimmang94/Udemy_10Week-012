@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,6 +67,11 @@ public class Touch : MonoBehaviour
                     univoice.clip = voice2;
                     univoice.Play();
                     MsgDisp.ShowMessage("꺆");
+                }
+                else if (hitObj.tag == "Arm")
+                {
+                    Debug.Log("Arm");
+                    MsgDisp.ShowMessage($"현재 날짜 : {DateTime.Now.ToString()}"); 
                 }
             }
             
